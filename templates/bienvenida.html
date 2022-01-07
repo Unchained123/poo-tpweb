@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+{% block title %}Bienvenido al sistema{% endblock %}
+{% block content %}	
+	<h1>Bienvenido al sistema.</h1>
+	<div class="contenido">
+		{%if session['tipo']=="cli" %}
+		<ul>
+			<li> <a href = "{{ url_for('solicitar_movil') }}"> Solicitar un movil </a></li>
+			<li> <a href = "{{ url_for('consultar_movil') }}"> Consultar por movil solicitado </a></li>
+		</ul>
+		{%else%}
+		<ul>
+			<li> <a href = "{{ url_for('asignar_movil') }}"> Asignar movil a un viaje pendiente </a></li>
+			<li> <a href = "{{ url_for('finalizar_viaje') }}"> Finalizar viaje </a></li>
+			<li> <a href = "{{ url_for('consultar_viajes') }}"> Consultar viajes realizados por un movil </a></li>
+		</ul>
+		{%endif%}
+	</div>
+{% endblock %}

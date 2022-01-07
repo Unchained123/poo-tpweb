@@ -1,0 +1,79 @@
+{% extends "base_template.html" %}
+{% block title %}Finalizar Viaje{% endblock %}
+{% block content %}
+<div class="contenido">
+    {% if viajes%}
+        <h1>Viajes sin finalizar</h1>
+        <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Dni Cliente</th>
+                <th>Movil</th>
+              </tr><br>
+            </thead>
+            <tbody>
+              {%for viaje in viajes%}
+              <tr>
+                <td>{{viaje.IdViaje}}</td>
+                <td>{{viaje.Origen}}</td>
+                <td>{{viaje.Destino}}</td>
+                <td>{{viaje.Fecha}}</td>
+                <td>{{viaje.DniCliente}}</td>
+                <td>{{viaje.NumMovil}}</td>
+              </tr><br>
+              {%endfor%}
+            </tbody>
+        </table><br>
+        <form action = "{{request.path}}" method = "post">
+            <label for = "viaje">Viajes sin finalizar</label>
+            <select id= "viaje" name="viaje" >
+                {% for viaje in viajes %}
+                <option value="{{viaje.IdViaje}}">ID: {{viaje.IdViaje}}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="duracion">Ingrese duracion del viaje(En minutos):</label>
+            <input type="number" id='duracion' name="duracion" placeholder="1-1440" min="1" max="1440"/><br>
+            <input class="boton1" type="submit" value="Calcular precio" />
+        </form>
+    {% else  %}
+        {% if viaje %}
+            <p>Datos del viaje:</p>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th>Demora</th>
+                    <th>Duracion</th>
+                    <th>Importe</th>
+                    <th>Dni Cliente</th>
+                    <th>Movil</th>
+                  </tr><br>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{viaje.IdViaje}}</td>
+                    <td>{{viaje.Origen}}</td>
+                    <td>{{viaje.Destino}}</td>
+                    <td>{{viaje.Fecha}}</td>
+                    <td>{{viaje.Demora}}</td>
+                    <td>{{viaje.Duracion}}</td>
+                    <td>{{viaje.Importe}}</td>
+                    <td>{{viaje.DniCliente}}</td>
+                    <td>{{viaje.NumMovil}}</td>
+                  </tr><br>
+                </tbody>
+            </table>
+        </p>
+        {% endif %}
+    {% endif %}
+    <a class='boton1' href="{{url_for('bienvenida')}}">Volver al menu</a>
+</div>
+{% endblock %}

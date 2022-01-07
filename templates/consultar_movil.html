@@ -1,0 +1,14 @@
+{% extends "base_template.html" %}
+{% block title %}Consultar Movil{% endblock %}
+{% block content %}
+    {% if aviso and not datos %}
+    <h1>{{aviso}}</h1>
+    <a class='boton1' href="{{url_for('bienvenida')}}" >Volver</a>
+    {% endif %}
+    {% if not aviso and datos %}
+    <h1>Su movil ya esta en camino</h1>
+    <p>El movil que lo retira es de marca {{datos[0].marca}} y tiene patente {{datos[0].patente}}<br>
+        El tiempo de espera restante es de {{datos[1]}} minutos.</p>
+        {% endif %}
+{% endblock %}
+

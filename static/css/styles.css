@@ -1,0 +1,128 @@
+/*COLORES: 
+BLANCO:#E3E3E3
+AMARILLO:#FFFF52
+NEGRO: #484848
+NARANJA: #FE5F55
+ROJO: #F21B3F*/
+
+:root{
+    color:#484848;
+    font-family: "Cambria", Georgia, serif;
+}
+
+#cuerpo{
+    background-color: #484848;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+       ),  
+       url("/static/css/fondo.png");
+    background-repeat: repeat;
+}
+
+.contenedorMain{
+    color: #E3E3E3;
+}
+
+.contenedorMain a{
+    color: #FE5F55;
+}
+
+.contenedorMain h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    color: #FFFF52;
+}
+
+.contenedorMain ul{
+    text-justify: auto;
+    list-style-type: none;
+    padding: 0;
+    background-color: #E3E3E3;
+    color: #484848;
+}
+  
+.contenedorMain li a {
+    display: block;
+    background-color: #E3E3E3;
+    color: #484848;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+.contenedorMain  li a:hover {
+    background-color: #484848;
+    color: #E3E3E3;
+  }
+  
+.contenedorMain  table, th, td {
+    border: 1px solid #484848;
+    border-collapse: collapse;
+    margin-left: 2em; 
+  }
+
+.contenedorMain th, td {
+    padding: 5px;
+  }
+
+.contenedorMain .boton1 {
+    background-color: #FE5F55;
+    color: #E3E3E3;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    
+}
+
+.contenedorMain .boton1:hover {
+    background-color: #E3E3E3;
+    color: #484848;
+}
+
+.encabezado{
+    position: fixed;
+    top: 0;
+    width: 99.5%;
+    background-color: #e4e4e4c7;
+    color: #484848;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.encabezado #inicio {
+    float: left;
+    background-color: #FE5F55;
+    color: #484848;
+    padding: 7px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.encabezado #logout {
+    float: right;
+    background-color: #FE5F55;
+    color: #484848;
+    padding: 7px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.contenedor1{
+    background-color:#0000009c;
+    border-radius: 10px;
+    margin: 4% 25%;
+    padding: 20px;
+    display: grid;
+}
+
+.contenedor1 .contenido{
+    margin: 0 auto;
+
+}
+

@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+{% block title %}Crear Usuario{% endblock %}
+{% block content %}
+  <h1>Registro de Usuario</h1>
+  <hr/>
+  <div class="contenido">
+  <form action = "{{ request.path }}" method = "post">
+    <label for = "nombre">Nombre</label><br>
+    <input type = "text" name = "nombre" placeholder = "Nombre" /><br>
+    
+        <label for = "dni">DNI</label><br>
+        <input type = "text" name = "dni" placeholder = "dni" pattern="([0-9]{7,9}){1}" /><br>
+        
+        <label for = "password">Contraseña</label><br>
+        <input type = "password" name = "password" placeholder = "password"/><br>
+        <br>
+        <input class='boton1' type = "submit" value = "Guardar" />
+      </form>
+  </div>
+{% endblock %}
+

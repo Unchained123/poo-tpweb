@@ -1,0 +1,15 @@
+{% extends "base_template.html" %}
+{% block title %}Aviso{% endblock %}
+{% block content %}	
+    {%if error%} 
+    <h1>Algo salio mal, lo lamentamos.</h1>
+    <p>{{error}}</p>
+    {%endif%}
+    {%if aviso%}
+    <h1>Algo salio bien, lo felicitamos.</h1>
+    <p>{{aviso}}</p>
+    {%endif%}
+    {%if url%}
+    <br><br><a class="boton1" href = "{{url}}" > Continuar </a><br><br>
+    {%endif%}
+{% endblock %}

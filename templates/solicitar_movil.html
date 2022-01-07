@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+{% block title %}Solicitar movil{% endblock %}
+{% block content %}
+    <h1>Solicitar movil</h1>
+    <hr/>
+    <div class="contenido">
+    <form action = "{{ request.path }}" method = "post" >
+      <label for = "origen">Origen</label><br>
+      <input type = "text" name = "origen" placeholder = "av 123 oeste, 543" /><br>
+      
+      <label for = "destino">Destino</label><br>
+      <input type = "text" name = "destino" placeholder = "av 123 este, 982" /><br>
+      <input class='boton1' type = "submit" value = "Enviar solicitud" />
+    </form>
+    </div>
+{% endblock %}
+

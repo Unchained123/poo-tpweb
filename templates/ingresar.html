@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+{% block title %}Ingreso{% endblock %}
+{% block content %}
+<h1>Iniciar Sesion</h1>
+<hr/>           
+<div class="contenido">
+<form action = "{{ request.path }}" method = "post">  
+      <label for = "dni">DNI</label><br>
+      <input type = "text" name = "dni" placeholder = "Ej: 11222333" pattern="([0-9]{6,9}){1}" /><br> 		 
+      <label for = "password">Ingrese su contraseña</label><br>
+      <input type = "password" name = "password" placeholder = "password"/><br>		 
+      
+      <br>
+      <input class='boton1' type = "submit" value = "Buscar" />            
+</form>
+</div>	  
+{% endblock %}

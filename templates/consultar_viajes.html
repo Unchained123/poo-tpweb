@@ -1,0 +1,58 @@
+{% extends "base_template.html" %}
+{% block title %}Consultar Viajes{% endblock %}
+{% block content %}
+
+{% if moviles and hoy%}
+<h1>Seleccione la informacion necesaria para buscar los viajes</h1>
+<div class="contenido">
+    <form action = "{{ request.path }}" method = "post" class = "container">
+        <label for="numMovil"> Selecciona un numero de movil:</label>
+        <select name="numMovil" id="numMovil">
+            {%for movil in moviles%}
+            <option value="{{movil}}">Movil: {{movil}}</option>
+            {%endfor%}
+        </select><br>
+    <label for = "fecha">Selecciona una fecha:</label>
+    <input type="date" name="fecha" id=fecha value="{{hoy}}" min="2020-01-00" max="{{hoy}}">
+    <br>
+    <input class='boton1' type = "submit" value = "Buscar" />
+    </form> 
+</div>
+{%else%}
+    {% if viajes%}
+    <h1>Hemos encontrado los siguientes viajes que coinciden con lo solicitado</h1>
+    <div class="contenido">
+        <div> 
+        <table>
+            <thead>
+                <tr>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Duracion</th>
+                    <th>Importe</th>
+                </tr><br>
+            </thead>
+            <tbody>
+                {%for viaje in viajes%}
+                <tr>
+                    <td>{{viaje.Origen}}</td>
+                    <td>{{viaje.Destino}}</td>
+                    <td>{{viaje.Duracion}}</td>
+                    <td>{{viaje.Importe}}</td>
+                </tr><br>
+                {%endfor%}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td rowspan="4"> Suma total de los viajes: {{suma}} </td>
+                </tr>
+            </tfoot>
+        </table>
+        </div>
+    </div>
+    {%else%}
+    <h3>No encontramos viajes para esa fecha</h3>
+    {% endif %}
+{% endif %}
+<a class='boton1' href="{{url_for('bienvenida')}}">Volver al menu</a>
+{% endblock %}

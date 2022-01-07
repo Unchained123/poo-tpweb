@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/styles.css") }}'>
+</head>
+<body id='cuerpo'>
+  <div class='contenedorMain'>
+    <div class="encabezado">
+      <a href = "{{ url_for('bienvenida') }}" id='inicio'> Inicio </a>
+      <label >Usuario: {{session['dni']}}</label>
+      <a href = "{{ url_for('Cerrarsesion') }}" id='logout'> Cerrar Sesion </a>
+    </div>	
+    <div class='contenedor1'>
+    {% block content %}{% endblock %}
+  </div>
+  </div>
+</body>
+</html>
+
+

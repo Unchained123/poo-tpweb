@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+    <title>Aplicación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>   
+   <body id="cuerpo">     
+      <div class='contenedorMain'>
+         <div class="contenedor1">
+            <h1>Bienvenidos a Remiss POO</h1>
+            <div class='contenido'>
+               <ul>
+                  <li> <a href = "{{ url_for('registrarse') }}"> Registrarse como Usuario </a></li>
+                  <li> <a href = "{{ url_for('ingresar') }}"> Ingresar</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>   
+   </body>
+</html>
+
